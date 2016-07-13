@@ -1,11 +1,11 @@
 {
-  "name": "angularjs-slider",
-  "version": "5.3.0",
+  "name": "angularjs-slider-printfly",
+  "version": "5.4.1",
   "description": "AngularJS slider directive with no external dependencies. Mobile friendly!.",
   "main": "dist/rzslider.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular-slider/angularjs-slider"
+    "url": "https://github.com/printfly/angularjs-slider-printfly"
   },
   "keywords": [
     "angular",
