@@ -1,7 +1,7 @@
-/*! angularjs-slider-printfly - v5.4.1 - 
+/*! angularjs-slider-printfly - v5.4.2 - 
  (c) Rafal Zajac <rzajac@gmail.com>, Valentin Hervieu <valentin@hervieu.me>, Jussi Saarivirta <jusasi@gmail.com>, Angelin Sirbu <angelin.sirbu@gmail.com> - 
  https://github.com/printfly/angularjs-slider-printfly - 
- 2016-07-13 */
+ 2016-10-21 */
 /*jslint unparam: true */
 /*global angular: false, console: false, define, module */
 (function(root, factory) {
@@ -1991,8 +1991,9 @@
       },
 
       applyMinMaxRange: function(newValue) {
-        var oppositeValue = this.tracking === 'lowValue' ? this.highValue : this.lowValue,
-          difference = Math.abs(newValue - oppositeValue);
+        var oppositeValue = this.tracking === 'lowValue' ? this.highValue : this.lowValue;
+        var difference = (this.tracking === 'highValue' && newValue < this.lowValue) ? 0 :
+            Math.abs(newValue - oppositeValue);
         if (this.options.minRange != null) {
           if (difference < this.options.minRange) {
             if (this.tracking === 'lowValue')
