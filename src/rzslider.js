@@ -1995,8 +1995,9 @@
       },
 
       applyMinMaxRange: function(newValue) {
-        var oppositeValue = this.tracking === 'lowValue' ? this.highValue : this.lowValue,
-          difference = Math.abs(newValue - oppositeValue);
+        var oppositeValue = this.tracking === 'lowValue' ? this.highValue : this.lowValue;
+        var difference = (this.tracking === 'highValue' && newValue < this.lowValue) ? 0 :
+            Math.abs(newValue - oppositeValue);
         if (this.options.minRange != null) {
           if (difference < this.options.minRange) {
             if (this.tracking === 'lowValue')
